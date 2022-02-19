@@ -1,5 +1,5 @@
-import {resolve} from 'path';
-export default function (api) {
+const path = require('path');
+module.exports = function (api) {
   api.cache(true);
   return {
     presets: ['module:metro-react-native-babel-preset'],
@@ -18,21 +18,21 @@ export default function (api) {
             '.tsx',
           ],
           alias: {
-            atoms: resolve(__dirname, './src/components/atoms'),
-            molecules: resolve(__dirname, './src/components/molecules'),
-            organisms: resolve(__dirname, './src/components/organisms'),
-            templates: resolve(__dirname, './src/components/templates'),
-            context: resolve(__dirname, './src/context'),
-            modules: resolve(__dirname, './src/state/modules/index.ts'),
-            models: resolve(__dirname, './src/state/models'),
-            repositories: resolve(__dirname, './src/state/repositories'),
-            services: resolve(__dirname, './src/state/services'),
-            store: resolve(__dirname, './src/state/store'),
-            theme: resolve(__dirname, './src/theme'),
-            hooks: resolve(__dirname, './src/hooks'),
-            nav: resolve(__dirname, './src/views/navigation'),
-            navTypes: resolve(__dirname, './src/navigation/types.ts'),
-            screens: resolve(__dirname, './src/screens'),
+            atoms: path.resolve(__dirname, './src/components/atoms'),
+            molecules: path.resolve(__dirname, './src/components/molecules'),
+            organisms: path.resolve(__dirname, './src/components/organisms'),
+            templates: path.resolve(__dirname, './src/components/templates'),
+            context: path.resolve(__dirname, './src/context'),
+            modules: path.resolve(__dirname, './src/state/modules/index.ts'),
+            models: path.resolve(__dirname, './src/state/models'),
+            repositories: path.resolve(__dirname, './src/state/repositories'),
+            services: path.resolve(__dirname, './src/state/services'),
+            store: path.resolve(__dirname, './src/state/store'),
+            theme: path.resolve(__dirname, './src/theme'),
+            hooks: path.resolve(__dirname, './src/hooks'),
+            nav: path.resolve(__dirname, './src/views/navigation'),
+            navTypes: path.resolve(__dirname, './src/navigation/types.ts'),
+            screens: path.resolve(__dirname, './src/screens'),
           },
         },
       ],
@@ -49,4 +49,4 @@ export default function (api) {
       ],
     ],
   };
-}
+};
